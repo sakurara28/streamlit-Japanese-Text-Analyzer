@@ -4,7 +4,7 @@ from sentiment_analysis import sentiment_analysis
  
 # ページタイトル
 st.title("Sentiment Analysis")
-st.write("CSVファイルからポジネガ分析テータを生成します。")
+st.write("CSV内のテキストを感情分析し、Positive/Neutral/Negative の確率分布を出力します。")
 
 # ===== データ読み込み & プレビュー =====
 uploaded_file = st.file_uploader("CSVファイルをアップロードしてください。", type=["csv"])

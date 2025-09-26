@@ -5,7 +5,7 @@ from wordfrequency_wordcloud import list_matplotlib_colors, morph_for_freq_wordc
 
 # ページタイトル
 st.title("Word Frequency & Word Cloud")
-st.write("CSVファイルから単語頻度分析とワードクラウドを生成します。")
+st.write("CSV内のテキストを形態素解析して単語頻度を集計し、ワードクラウドを生成します。")
 
 # ===== データ読み込み & プレビュー =====
 uploaded_file = st.file_uploader("CSVファイルをアップロードしてください。", type=["csv"])

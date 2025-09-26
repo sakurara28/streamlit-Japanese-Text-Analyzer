@@ -5,7 +5,7 @@ import re
  
 # ページタイトル
 st.title("Topic Classification")
-st.write("CSVファイルからトピック分類データを生成します。")
+st.write("CSV内のテキストをZero-shotで分類し、各トピックに対する確率分布を出力します。")
 
 # ===== データ読み込み & プレビュー =====
 uploaded_file = st.file_uploader("CSVファイルをアップロードしてください。", type=["csv"])
@@ -22,7 +22,10 @@ if uploaded_file is not None:
     selected_col = st.selectbox("分析する.csvの列名を選択", df_topic.columns)
 
     # カテゴリ名の入力
-    input_colcategories = st.text_input("トピック分類したいキーワードをカンマ（,）区切りで入力")
+    input_colcategories = st.text_input(
+        "トピック分類したいキーワードをカンマ（,）区切りで入力",
+        help = "入力例：国際,経済,スポーツ,天気,健康"  # ヒントマーク
+    )
     colcategories = re.split(r"[, 　]+", input_colcategories)  # カンマ、半角/全角スペースで分割してリストに変換
 
 else:
