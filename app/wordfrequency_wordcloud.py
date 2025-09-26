@@ -7,6 +7,7 @@ from collections import Counter
 import matplotlib.pyplot as plt
 import seaborn as sns
 import japanize_matplotlib
+from pathlib import Path
 
 # カラー一覧（単色 / カラーマップ）
 def list_matplotlib_colors(): 
@@ -93,12 +94,14 @@ def make_wordcloud(all_tokens_flattened: list[str], selected_color: str):
     dic_result = dict(counter)  # ワードクラウド取込用に辞書型ヘ変換
     mask_ellipse = make_ellipse_mask(1000, 600)  # 楕円マスク関数の呼び出し
 
-    font_path = "C:/Windows/Fonts/msgothic.ttc"  # Windows用のフォントパス設定
+    # この.pyファイルと同じ階層にfontsフォルダを作っておく
+    FONT_PATH = Path(__file__).parent / "fonts" / "NotoSansJP-VariableFont_wght.ttf"
+
     wordcloud = WordCloud(
         width=1000,
         height=600,
         mask=mask_ellipse,
-        font_path=font_path,
+        font_path=str(FONT_PATH),  # 相対パスを指定
         background_color="white",
         colormap=selected_color.split(" / ")[1].split("（")[0],
         max_words=100
