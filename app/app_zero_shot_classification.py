@@ -4,7 +4,7 @@ from zero_shot_classification import zero_shot_classification
 import re
  
 # ページタイトル
-st.title("Sentiment Analysis")
+st.title("Topic Classification")
 st.write("CSVファイルからトピック分類データを生成します。")
 
 # ===== データ読み込み & プレビュー =====

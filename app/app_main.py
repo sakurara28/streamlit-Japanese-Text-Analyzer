@@ -1,4 +1,13 @@
 import streamlit as st
+import os
+import streamlit as st
+
+# PW設定
+PASSWORD = os.environ.get("APP_PASSWORD")
+pw = st.text_input("パスワードを入力してください", type="password")
+if pw != PASSWORD:
+    st.stop()
+
 
 pages = {
     "Japanese Text Analyzer": [

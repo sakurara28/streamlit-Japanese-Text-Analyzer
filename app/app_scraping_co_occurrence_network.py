@@ -4,7 +4,7 @@ morph_for_cooccurrence, make_word_pairs, plot_cooccurrence_network)
 
 # ページタイトル
 st.title("Co-occurrence Network")
-st.write("PR TIMESの記事から共起ネットワークを生成します。")
+st.write("PR TIMESの記事からキーワードの関連性を抽出し、ネットワーク図で表現します。")
 
 # ===== PR TIMESの検索KW入力 =====
 keyword = st.text_input("キーワードを半角スペース区切りで入力")

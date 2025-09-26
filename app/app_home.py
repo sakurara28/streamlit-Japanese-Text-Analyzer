@@ -10,6 +10,6 @@ st.markdown("""
     <h4>🏷️ **Topic Classification**</h4>
     <p>&emsp;&emsp;&emsp;文章の内容から自動的にトピックを推定します</p>
     <h4>🕸️ **Co-occurrence Network**</h4>
-    <p>&emsp;&emsp;&emsp;単語のつながりをネットワーク図で表示します</p>""",
+    <p>&emsp;&emsp;&emsp;単語のつながりをネットワーク図で表現します</p>""",
     unsafe_allow_html=True
 )
