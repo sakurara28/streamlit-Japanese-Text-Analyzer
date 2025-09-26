@@ -2,7 +2,6 @@ from huggingface_hub.utils.tqdm import progress_bar_states
 from transformers import pipeline
 import torch
 import pandas as pd
-import streamlit as st
 
 # ===== ポジネガ分類 =====
 def sentiment_analysis(input_texts: list[str]) -> pd.DataFrame:
