@@ -7,7 +7,6 @@ japanize-matplotlib
 wordcloud
 torch
 transformers
-huggingface_hub
 sudachipy
 sudachidict_core
 neologdn

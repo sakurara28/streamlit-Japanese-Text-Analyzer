@@ -1,13 +1,9 @@
-from huggingface_hub.utils.tqdm import progress_bar_states
 from transformers import pipeline
 import pandas as pd
 import torch
 import streamlit as st
 
-
-
 def zero_shot_classification(input_texts: list[str], categories: list[str]) -> pd.DataFrame:
-    progress_bar = st.progress(0)
 
     # ゼロショット分類モデルを読み込む
     zero_shot_classifier = pipeline(
@@ -28,8 +24,6 @@ def zero_shot_classification(input_texts: list[str], categories: list[str]) -> p
         )                     # False:1つのカテゴリだけに属するとみなせる場合。スコアの合計は1.0（Softmax関数で正規化）
         #print(output,"\n")   # 辞書で返る（sequenc, labels, scores）
         results.append(output)
-
-        progress_bar.progress((i+1)/len(input_texts))
     
     # スコアが降順に返ってくるので、元のラベル順に並べ替える
     rows = []
@@ -55,5 +49,4 @@ def zero_shot_classification(input_texts: list[str], categories: list[str]) -> p
         top_labels.append(top)
         # print(top_labels)
     df_results["top_label"] = top_labels
-    progress_bar.empty()
     return df_results

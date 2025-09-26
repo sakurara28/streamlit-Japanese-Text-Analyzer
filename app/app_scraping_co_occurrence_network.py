@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 from scraping_co_occurrence_network import (make_search_url, get_search_results, get_article_data,
 morph_for_cooccurrence, make_word_pairs, plot_cooccurrence_network)
 
@@ -32,5 +31,4 @@ if st.button("実行"):
         # 共起ネットワーク描画
         fig = plot_cooccurrence_network(top200)
         st.pyplot(fig)
-
     st.success("完了しました！")

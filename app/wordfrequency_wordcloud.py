@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import japanize_matplotlib
 
-
 # カラー一覧（単色 / カラーマップ）
 def list_matplotlib_colors(): 
     colormap_list = [
